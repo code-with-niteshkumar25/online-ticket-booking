@@ -1,0 +1,17 @@
+<html>
+<head>
+<tittle> online bus</tittle>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<header>
+<dev class="main">
+<ul>
+<li><a href="#">home</a></li>
+<li><a href="#">online bus></a></li>
+<li><a href="#">about></a></li>
+</ul>
+</div>
+</header>
+</body>
+</html> 

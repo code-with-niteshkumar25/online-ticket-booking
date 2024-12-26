@@ -1,0 +1,111 @@
+<html>
+<head>
+<title> user login</title>
+<link rel="stylesheet" href="userlogmenu.css">
+</head>
+<style>
+body{
+position:fixed;
+}
+h1{
+position:relative;
+left:82px;
+top:100px;
+font-size:20px;
+}
+.i{
+position:relative;
+left:70px;
+top:100px;
+height:30px;
+width:200px;
+padding:10px;
+border-radius:5px;
+}
+.b{
+	background-color:white;
+position:relative;
+height:400px;
+width:350px;
+left:600px;
+top:180px;
+border-radius:5px;
+border:1px solid black;
+}
+h2{
+   position:absolute;
+   width:1550px;
+   top:-20px;
+   }
+h3{
+   position:absolute;
+   top:10px;
+   left:50px;
+   color:kala;
+}
+.img{
+     position:absolute;
+	 top:23px;
+	 left:20px;
+	 height:33px;
+     width:30px;	
+	
+}
+
+ .btn{
+         padding:5px;
+		 border-radius:5px;
+		 background-color:grey;
+		 color:white;
+		 border: 1px solid #000;
+	     padding: 10px 30px;
+		 text-decoration:none;
+		 position:absolute;
+		 top:300px;
+		 left:115px;	
+}
+   
+</style>
+<body>
+<h2> ONLINE JOB PORTAL</h2>
+<form method="POST">
+<div class="b">
+<img class="img" src="login.png"><h3><u>Log</u>in</h3>
+<h1>ADMIN LOGIN</h1>
+<input class="i" type="text" placeholder="USER LOGIN" name="t1" required="">
+<h1>PASSWORD</h1>
+<input  class="i" type="password" placeholder="PASSWORD" name="t2" required="">
+<input class="btn" type="submit" value="Login" name="regi">
+</div>
+<a href="adminregi.php"><img class="back" src="b.png"></a>
+
+<?php
+session_start();
+error_reporting(0);
+
+include("connect.php");
+if(isset($_POST['adminregi']))
+{
+$name=$_POST['t1'];
+$pass=$_POST['t2'];
+	
+$qu="select * from adminregi where name='$name' and password='$pass';";
+$q=mysqli_query($connect,$qu);
+$num=mysqli_num_rows($q);
+if($num==1)
+
+{
+	header('location:admindash.php');
+}
+else
+{
+	echo"NOT";
+	}
+
+}
+
+?>
+
+</form>
+</body>
+</html>
